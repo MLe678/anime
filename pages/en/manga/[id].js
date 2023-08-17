@@ -3,7 +3,6 @@ import ChapterSelector from "../../../components/manga/chapters";
 import HamburgerMenu from "../../../components/manga/mobile/hamburgerMenu";
 import Navbar from "../../../components/navbar";
 import TopSection from "../../../components/manga/info/topSection";
-import Footer from "../../../components/footer";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import { setCookie } from "nookies";
@@ -33,7 +32,7 @@ export default function Manga({ info, userManga, chapters }) {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content={`Moopa - ${info.title.romaji || info.title.english}`}
+          content={`anime - ${info.title.romaji || info.title.english}`}
         />
         <meta
           name="twitter:description"
@@ -71,7 +70,6 @@ export default function Manga({ info, userManga, chapters }) {
             )}
           </div>
         </div>
-        <Footer />
       </div>
     </>
   );

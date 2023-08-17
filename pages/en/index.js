@@ -2,7 +2,6 @@ import { aniListData } from "../../lib/anilist/AniList";
 import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import Link from "next/link";
-import Footer from "../../components/footer";
 import Image from "next/image";
 import Content from "../../components/home/content";
 
@@ -74,18 +73,15 @@ export default function Home({ detail, populars, sessions, upComing }) {
     async function adBlock() {
       const ad = await checkAdBlock();
       if (ad) {
-        toast.dark(
-          "Please disable your adblock for better experience, we don't have any ads on our site.",
-          {
-            position: "top-center",
-            autoClose: false,
-            hideProgressBar: true,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            theme: "dark",
-          }
-        );
+        toast.dark("Ad Block check. There are no ads on the site.", {
+          position: "top-center",
+          autoClose: false,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          theme: "dark",
+        });
       }
     }
     adBlock();
@@ -238,16 +234,13 @@ export default function Home({ detail, populars, sessions, upComing }) {
   return (
     <>
       <Head>
-        <title>Moopa</title>
+        <title>Anime</title>
         <meta charSet="UTF-8"></meta>
         <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Moopa - Free Anime and Manga Streaming"
-        />
+        <meta name="twitter:title" content="Free Anime and Manga Streaming" />
         <meta
           name="twitter:description"
-          content="Discover your new favorite anime or manga title! Moopa offers a vast library of high-quality content, accessible on multiple devices and without any interruptions. Start using Moopa today!"
+          content="Free Anime and Manga Streaming"
         />
         <meta
           name="twitter:image"
@@ -269,67 +262,6 @@ export default function Home({ detail, populars, sessions, upComing }) {
         />
 
         {/* PC / TABLET */}
-        <div className=" hidden justify-center lg:flex my-16">
-          <div className="relative grid grid-rows-2 items-center lg:flex lg:h-[467px] lg:w-[80%] lg:justify-between">
-            <div className="row-start-2 flex h-full flex-col gap-7 lg:w-[55%] lg:justify-center">
-              <h1 className="w-[85%] font-outfit font-extrabold lg:text-[34px] line-clamp-2">
-                {data.title.english || data.title.romaji || data.title.native}
-              </h1>
-              <p
-                className="font-roboto font-light lg:text-[18px] line-clamp-5"
-                dangerouslySetInnerHTML={{ __html: data?.description }}
-              />
-
-              <div className="lg:pt-5">
-                <Link
-                  href={`/en/anime/${data.id}`}
-                  legacyBehavior
-                  className="flex"
-                >
-                  <a className="rounded-sm p-3 text-md font-karla font-light ring-1 ring-[#FF7F57]">
-                    START WATCHING
-                  </a>
-                </Link>
-              </div>
-            </div>
-            <div className="z-10 row-start-1 flex justify-center ">
-              <div className="relative  lg:h-[467px] lg:w-[322px] lg:scale-100">
-                <div className="absolute bg-gradient-to-t from-[#141519] to-transparent lg:h-[467px] lg:w-[322px]" />
-
-                <Image
-                  draggable={false}
-                  src={data.coverImage?.extraLarge || data.image}
-                  alt={`alt for ${data.title.english || data.title.romaji}`}
-                  width={460}
-                  height={662}
-                  priority
-                  className="rounded-tl-xl rounded-tr-xl object-cover bg-blend-overlay lg:h-[467px] lg:w-[322px]"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        {/* {!sessions && (
-          <h1 className="font-bold font-karla mx-5 text-[32px] mt-2 lg:mx-24 xl:mx-36">
-            {greeting}!
-          </h1>
-        )} */}
-        {sessions && (
-          <div className="flex items-center justify-center lg:bg-none mt-4 lg:mt-0 w-screen">
-            <div className="lg:w-[85%] w-screen px-5 lg:px-0 lg:text-4xl flex items-center gap-3 text-2xl font-bold font-karla">
-              {greeting},<h1 className="lg:hidden">{sessions?.user.name}</h1>
-              <button
-                onClick={() => signOut()}
-                className="hidden text-center relative lg:flex justify-center group"
-              >
-                {sessions?.user.name}
-                <span className="absolute text-sm z-50 w-20 text-center bottom-11 text-white shadow-lg opacity-0 bg-secondary p-1 rounded-md font-karla font-light invisible group-hover:visible group-hover:opacity-100 duration-300 transition-all">
-                  Sign Out
-                </span>
-              </button>
-            </div>
-          </div>
-        )}
 
         <div className="lg:mt-16 mt-5 flex flex-col items-center">
           <motion.div
@@ -338,93 +270,6 @@ export default function Home({ detail, populars, sessions, upComing }) {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, staggerChildren: 0.2 }} // Add staggerChildren prop
           >
-            {user?.length > 0 && (
-              <motion.div // Add motion.div to each child component
-                key="recentlyWatched"
-                initial={{ y: 20, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
-              >
-                <Content
-                  ids="recentlyWatched"
-                  section="Recently Watched"
-                  userData={user}
-                />
-              </motion.div>
-            )}
-
-            {sessions && releaseData?.length > 0 && (
-              <motion.div // Add motion.div to each child component
-                key="onGoing"
-                initial={{ y: 20, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
-              >
-                <Content
-                  ids="onGoing"
-                  section="On-Going Anime"
-                  data={releaseData}
-                  og={prog}
-                  userName={sessions?.user?.name}
-                />
-              </motion.div>
-            )}
-
-            {sessions && list?.length > 0 && (
-              <motion.div // Add motion.div to each child component
-                key="listAnime"
-                initial={{ y: 20, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
-              >
-                <Content
-                  ids="listAnime"
-                  section="Your Watch List"
-                  data={list}
-                  og={prog}
-                  userName={sessions?.user?.name}
-                />
-              </motion.div>
-            )}
-
-            {/* SECTION 2 */}
-            {sessions && planned?.length > 0 && (
-              <motion.div // Add motion.div to each child component
-                key="plannedAnime"
-                initial={{ y: 20, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
-              >
-                <Content
-                  ids="plannedAnime"
-                  section="Your Plan"
-                  data={planned}
-                  userName={sessions?.user?.name}
-                />
-              </motion.div>
-            )}
-
-            {/* SECTION 3 */}
-            {detail && (
-              <motion.div // Add motion.div to each child component
-                key="trendingAnime"
-                initial={{ y: 20, opacity: 0 }}
-                transition={{ duration: 0.5 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true }}
-              >
-                <Content
-                  ids="trendingAnime"
-                  section="Trending Now"
-                  data={detail.data}
-                />
-              </motion.div>
-            )}
-
             {/* Schedule */}
             {anime.length > 0 && (
               <motion.div // Add motion.div to each child component
@@ -443,6 +288,23 @@ export default function Home({ detail, populars, sessions, upComing }) {
                     seconds: seconds || 0,
                   }}
                   scheduleData={schedules}
+                />
+              </motion.div>
+            )}
+
+            {/* SECTION 3 */}
+            {detail && (
+              <motion.div // Add motion.div to each child component
+                key="trendingAnime"
+                initial={{ y: 20, opacity: 0 }}
+                transition={{ duration: 0.5 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+              >
+                <Content
+                  ids="trendingAnime"
+                  section="Trending Now"
+                  data={detail.data}
                 />
               </motion.div>
             )}
@@ -476,7 +338,6 @@ export default function Home({ detail, populars, sessions, upComing }) {
           </motion.div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

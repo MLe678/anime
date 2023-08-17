@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import Skeleton from "react-loading-skeleton";
-import Footer from "../../../components/footer";
 import { getServerSession } from "next-auth";
 import { authOptions } from "../../api/auth/[...nextauth]";
 import MobileNav from "../../../components/home/mobileNav";
@@ -143,7 +142,6 @@ export default function PopularAnime({ sessions }) {
           )}
         </div>
       </div>
-      <Footer />
     </>
   );
 }

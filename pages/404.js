@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Footer from "../components/footer";
 import Navbar from "../components/navbar";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -45,7 +44,6 @@ export default function Custom404() {
           </div>
         </Link>
       </div>
-      <Footer />
     </>
   );
 }

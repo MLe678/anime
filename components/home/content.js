@@ -122,9 +122,6 @@ export default function Content({
     filteredData?.length > 15 ? filteredData?.slice(0, 15) : filteredData;
 
   const goToPage = () => {
-    if (section === "Recently Watched") {
-      router.push(`/${lang}/anime/recently-watched`);
-    }
     if (section === "Trending Now") {
       router.push(`/${lang}/anime/trending`);
     }
@@ -169,7 +166,6 @@ export default function Content({
           onClick={handleClick}
           ref={containerRef}
         >
-
           {ids !== "recentlyWatched"
             ? slicedData?.map((anime) => {
                 const progress = og?.find((i) => i.mediaId === anime.id);

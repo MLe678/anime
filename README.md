@@ -1,83 +1,3 @@
-<div align="center">
-<a href="https://moopa.live">
-  <img src="https://user-images.githubusercontent.com/97084324/234460363-216b29d3-acba-4c29-a321-780de84c9ab0.png" alt="logo" width="180"/>
-</a>
-</div>
-
-<h1 align="center">
-  <a href="https://moopa.live">Moopa Anime Streaming Website</a>
-</h1>
-
-<p align="center">
-
- <a href="https://github.com/DevanAbinaya/Ani-Moopa/blob/main/LICENSE.md">
-    <img src="https://img.shields.io/github/license/DevanAbinaya/Ani-Moopa" alt="license"/>
-  </a>
-  <a href="https://github.com/DevanAbinaya/Ani-Moopa/fork">
-    <img src="https://img.shields.io/github/forks/DevanAbinaya/Ani-Moopa?style=social" alt="fork"/>
-  </a>
-  <a href="https://github.com/DevanAbinaya/Ani-Moopa">
-    <img src="https://img.shields.io/github/stars/DevanAbinaya/Ani-Moopa?style=social" alt="stars"/>
-  </a>
-  
-</p>
-
-<p align="center">
- <img src="https://user-images.githubusercontent.com/97084324/234832975-0804e6bd-8528-4f53-b0fb-7ccce5342f59.png" alt="main">
-</p>
-
-<details>
-<summary>More Screenshots</summary>
-
-<h3 align="center">Home page after you login</h3>
-<img src="https://user-images.githubusercontent.com/97084324/234463979-4b4fa1ba-34cb-4ae4-b4e1-59500b24ac6f.png"/>
-
-<h3 align="center">Profile Page</h3>
-<img src="https://user-images.githubusercontent.com/97084324/234556937-76ec236c-a077-4af5-a910-0cb85e900e38.gif"/>
-
-<h3 align="center">Info page for PC/Mobile</h3>
-<p align="center">
-<img src="https://user-images.githubusercontent.com/97084324/234508708-082b8d64-1dea-4525-98a5-51a5a95e8db3.png"/>
-</p>
-
-<h3 align="center">Watch Page</h3>
-<img src="https://github.com/Ani-Moopa/Moopa/assets/97084324/c654aa13-76d7-47fe-ac02-924fbbb40f76"/>
- 
-<h3 align="center">Manga Reader</h3>
-<img src="https://github.com/DevanAbinaya/Ani-Moopa/assets/97084324/ccd2ee11-4ee3-411c-b634-d48c84f1a9e2"/>
-
-</details>
-
-## Introduction
-
-<p><a href="https://moopa.live">Moopa</a> is an anime streaming website made possible by <a href="https://github.com/consumet">Consumet API</a> build with <a href="https://github.com/vercel/next.js/">NextJs</a> and <a href="https://github.com/tailwindlabs/tailwindcss">Tailwind</a> with a sleek and modern design that offers Anilist integration to help you keep track of your favorite anime series. Moopa is entirely free and does not feature any ads, making it a great option for you who want an uninterrupted viewing experience.</p>
-
-## Features
-
-- Free ad-supported streaming service
-- Anime tracking through Anilist API
-- Skip OP/ED buttons
-- Dub Anime support
-- User-friendly interface
-- Mobile-responsive design
-- PWA supported
-
-## To Do List
-
-- [x] Add PWA support
-- [x] Connect to consumet API to fetch episodes data
-- [x] Implement skip op/ed button on supported anime
-- [x] Create README file
-- [x] Integrate Anilist API for anime tracking
-  - [x] Ability to auto track anime after watching >= 90% through the video
-  - [x] Create a user profile page to see lists of anime watched
-  - [x] Ability to edit list inside detail page
-- [x] Working on Manga pages
-
-## Bug Report
-
-If you encounter any issues or bug on the site please head to [issues](https://github.com/DevanAbinaya/Ani-Moopa/issues) and create a bug report there.
-
 ## For Local Development
 
 1. Clone this repository using :
@@ -132,34 +52,12 @@ https://your-website-url/api/auth/callback/AniListProvider
 npm run dev
 ```
 
-## Disclaimer
-
-If you want to host this web app yourself, please try to make significant changes to give it a unique look. The main reason I'm sharing this project as open source is to help others find some guidance, not to encourage copying and pasting. If you end up using this code for your own project, I'd love to see what you come up with! Feel free to share it with me, as I'm excited to see the creative things you can build using this code. :)
-
 ## Credits
 
 - [Consumet API](https://github.com/consumet/api.consumet.org) for anime sources
 - [AniList API](https://github.com/AniList/ApiV2-GraphQL-Docs) for anime details source
 - [Anify API](https://anify.tv/discord) for manga sources
-- [miru](https://github.com/ThaUnknown/miru/) for inspiring me making this site
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
-
-## Contact
-
-Thank You for passing by!!
-
-If you have any questions or feedback, please reach out to us at [contact@moopa.live](mailto:contact@moopa.live?subject=[Moopa]%20-%20Your%20Subject), or you can join our [discord sever](https://discord.gg/4xTGhr85BG).
-<br>
-or you can DM me on Discord `Factiven#9110`/`CritenDust#3704`. (just contact me on one of these account)
-
-[![Discord Banner](https://discordapp.com/api/guilds/822413263148285973/widget.png?style=banner2)](https://discord.gg/v5fjSdKwr2)
-
-## Support This Project
-
-✨ [Star this project](https://github.com/DevanAbinaya/Ani-Moopa)
-
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/E1E6F9XZ3)  
-<a href="https://trakteer.id/factiven" target="_blank"><img id="wse-buttons-preview" src="https://cdn.trakteer.id/images/embed/trbtn-red-5.png" height="36" style="border: 0px; height: 36px;" alt="Trakteer Saya"></a>

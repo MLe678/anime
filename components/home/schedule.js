@@ -41,13 +41,10 @@ export default function Schedule({ data, scheduleData, time }) {
 
   return (
     <div className="flex flex-col gap-5 px-4 lg:px-0">
-      <h1 className="font-bold font-karla text-[20px] lg:px-5">
-        Don't miss out!
-      </h1>
       <div className="rounded mb-5 shadow-md shadow-black">
         <div className="overflow-hidden w-full h-[96px] lg:h-[10rem] rounded relative">
           <div className="absolute flex flex-col justify-center pl-5 lg:pl-16 rounded z-20 bg-gradient-to-r from-30% from-[#0c0c0c] to-transparent w-full h-full">
-            <h1 className="text-xs lg:text-lg">Coming Up Next!</h1>
+            <h1 className="text-xs lg:text-lg">Coming Soon...</h1>
             <div className="w-1/2 lg:w-2/5 hidden lg:block font-medium font-karla leading-[2.9rem] text-white line-clamp-1">
               <Link
                 href={`/en/anime/${data.id}`}
@@ -108,81 +105,6 @@ export default function Schedule({ data, scheduleData, time }) {
             </div>
           </div>
         </div>
-
-        {scheduleData && days && (
-          <div className="w-full bg-tersier rounded-b overflow-hidden">
-            <div
-              className="snap-start flex-shrink-0 h-[240px] overflow-y-scroll scrollbar-thin scrollbar-thumb-secondary scrollbar-thumb-rounded w-full"
-              style={{ scrollbarGutter: "stable" }}
-            >
-              <div className="flex flex-col gap-2 px-2 pt-2">
-                {scheduleData[days[currentPage]]
-                  .filter((show, index, self) => {
-                    return index === self.findIndex((s) => s.id === show.id);
-                  })
-                  .map((i, index) => {
-                    const currentTime = Date.now();
-                    const hasAired = i.airingAt < currentTime;
-
-                    return (
-                      <Link
-                        key={`${i.id}-${index}`}
-                        href={`/en/anime/${i.id}`}
-                        className={`${
-                          hasAired ? "opacity-40" : ""
-                        } h-full w-full flex items-center p-2 flex-shrink-0 hover:bg-secondary cursor-pointer`}
-                      >
-                        <div className="shrink-0">
-                          {i.coverImage && (
-                            <Image
-                              src={i.coverImage}
-                              alt={`${i.title.romaji} cover`}
-                              width={300}
-                              height={300}
-                              className="w-10 h-10 object-cover rounded"
-                            />
-                          )}
-                        </div>
-                        <div className="flex items-center justify-between w-full">
-                          <div className="font-karla px-2">
-                            <h1 className="font-semibold text-sm line-clamp-1">
-                              {i.title.romaji}
-                            </h1>
-                            <p className="font-semibold text-xs text-gray-400">
-                              {convertUnixToTime(i.airingAt)} - Episode{" "}
-                              {i.airingEpisode}
-                            </p>
-                          </div>
-                          <div>
-                            <PlayIcon className="w-6 h-6 text-gray-300" />
-                          </div>
-                        </div>
-                      </Link>
-                    );
-                  })}
-              </div>
-            </div>
-            <div className="flex items-center bg-tersier justify-between font-karla p-2 border-t border-secondary/40">
-              <button
-                type="button"
-                className="bg-secondary px-2 py-1 rounded"
-                onClick={handlePreviousPage}
-              >
-                <BackwardIcon className="w-5 h-5" />
-              </button>
-              <div className="font-bold uppercase">
-                {days[currentPage]?.replace("Schedule", "")}
-              </div>
-              <button
-                type="button"
-                className="bg-secondary px-2 py-1 rounded"
-                onClick={handleNextPage}
-              >
-                <ForwardIcon className="w-5 h-5" />
-              </button>
-            </div>
-          </div>
-        )}
       </div>
     </div>
   );

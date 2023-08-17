@@ -105,30 +105,7 @@ export default function HamburgerMenu() {
                   home
                 </Link>
               </button>
-              <button className="group flex flex-col items-center">
-                <Link href={`/${lang}/about`}>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="w-6 h-6 group-hover:stroke-action"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
-                    />
-                  </svg>
-                </Link>
-                <Link
-                  href={`/${lang}/about`}
-                  className="font-karla font-bold text-[#8BA0B2] group-hover:text-action"
-                >
-                  about
-                </Link>
-              </button>
+
               <button className="group flex gap-[1.5px] flex-col items-center ">
                 <div>
                   <Link href={`/${lang}/search/anime`}>
@@ -155,43 +132,6 @@ export default function HamburgerMenu() {
                   search
                 </Link>
               </button>
-              {session ? (
-                <button
-                  onClick={() => signOut("AniListProvider")}
-                  className="group flex gap-[1.5px] flex-col items-center "
-                >
-                  <div>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 96 960 960"
-                      className="group-hover:fill-action w-6 h-6 fill-txt"
-                    >
-                      <path d="M186.666 936q-27 0-46.833-19.833T120 869.334V282.666q0-27 19.833-46.833T186.666 216H474v66.666H186.666v586.668H474V936H186.666zm470.668-176.667l-47-48 102-102H370v-66.666h341.001l-102-102 46.999-48 184 184-182.666 182.666z"></path>
-                    </svg>
-                  </div>
-                  <h1 className="font-karla font-bold text-[#8BA0B2] group-hover:text-action">
-                    logout
-                  </h1>
-                </button>
-              ) : (
-                <button
-                  onClick={() => signIn("AniListProvider")}
-                  className="group flex gap-[1.5px] flex-col items-center "
-                >
-                  <div>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 96 960 960"
-                      className="group-hover:fill-action w-6 h-6 fill-txt mr-2"
-                    >
-                      <path d="M486 936v-66.666h287.334V282.666H486V216h287.334q27 0 46.833 19.833T840 282.666v586.668q0 27-19.833 46.833T773.334 936H486zm-78.666-176.667l-47-48 102-102H120v-66.666h341l-102-102 47-48 184 184-182.666 182.666z"></path>
-                    </svg>
-                  </div>
-                  <h1 className="font-karla font-bold text-[#8BA0B2] group-hover:text-action">
-                    login
-                  </h1>
-                </button>
-              )}
             </div>
             <button onClick={handleHideClick}>
               <svg

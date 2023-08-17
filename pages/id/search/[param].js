@@ -5,7 +5,6 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import Navbar from "../../../components/navbar";
 import Head from "next/head";
-import Footer from "../../../components/footer";
 
 import Image from "next/image";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
@@ -484,7 +483,6 @@ export default function Card() {
             </AnimatePresence>
           </div>
         </div>
-        <Footer />
       </div>
     </>
   );

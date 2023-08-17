@@ -50,7 +50,7 @@ export default function Navigasi() {
               href="/en/"
               className=" font-outfit lg:text-[40px] text-[30px] font-bold text-[#FF7F57]"
             >
-              moopa
+              anime
             </Link>
             <ul className="hidden items-center gap-10 pt-2 font-outfit text-[14px] lg:flex">
               <li>
@@ -71,16 +71,6 @@ export default function Navigasi() {
                 <li>Loading...</li>
               ) : (
                 <>
-                  {!sessions && (
-                    <li>
-                      <button
-                        onClick={() => signIn("AniListProvider")}
-                        className="ring-1 ring-action font-karla font-bold px-2 py-1 rounded-md"
-                      >
-                        Sign in
-                      </button>
-                    </li>
-                  )}
                   {sessions && (
                     <li className="text-center">
                       <Link href={`/en/profile/${sessions?.user.name}`}>

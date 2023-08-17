@@ -91,7 +91,7 @@ export default function PrimarySide({
 
     mediaSession.metadata = new MediaMetadata({
       title: title,
-      artist: `Moopa ${
+      artist: `Anime ${
         title === info?.title?.romaji
           ? "- Episode " + epiNumber
           : `- ${info?.title?.romaji || info?.title?.english}`

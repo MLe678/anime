@@ -1,5 +1,4 @@
 import Navbar from "./navbar";
-import Footer from "./footer";
 import { useEffect, useState } from "react";
 
 function Layout(props) {
@@ -54,7 +53,6 @@ function Layout(props) {
           className={`absolute z-50 w-full duration-300 lg:fixed lg:top-0 lg:hidden lg:transition-all`}
         />
         <div className="grid items-center justify-center">{props.children}</div>
-        <Footer />
       </main>
     </>
   );
