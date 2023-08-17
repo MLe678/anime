@@ -204,7 +204,7 @@ export default function MyList({ media, sessions, user, time }) {
                         return (
                           <tr
                             key={item.mediaId}
-                            className="hover:bg-orange-400 duration-150 ease-in-out group relative"
+                            className="hover:bg-[#902020]-400 duration-150 ease-in-out group relative"
                           >
                             <td className="font-medium py-2 pl-2 rounded-l-lg">
                               <div className="flex items-center gap-2">

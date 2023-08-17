@@ -24,7 +24,7 @@ export default function MobileNav({ sessions }) {
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-[42px] w-[61.5px] text-[#8BA0B2] fill-orange-500"
+              className="h-[42px] w-[61.5px] text-[#902020] fill-[#902020]-500"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
@@ -40,18 +40,6 @@ export default function MobileNav({ sessions }) {
 
       {/* Mobile Menu */}
       <div className={`transition-all duration-150 subpixel-antialiased z-50`}>
-        {isVisible && sessions && (
-          <Link
-            href={`/en/profile/${sessions?.user.name}`}
-            className="fixed lg:hidden bottom-[100px] w-[60px] h-[60px] flex items-center justify-center right-[20px] rounded-full z-50 bg-[#17171f]"
-          >
-            <img
-              src={sessions?.user.image.large}
-              alt="user avatar"
-              className="object-cover w-[60px] h-[60px] rounded-full"
-            />
-          </Link>
-        )}
         {isVisible && (
           <div className="fixed bottom-[30px] right-[20px] z-50 flex h-[51px] w-[300px] items-center justify-center gap-8 rounded-[8px] text-[11px] bg-[#17171f] shadow-lg lg:hidden">
             <div className="grid grid-cols-4 place-items-center gap-6">
@@ -74,11 +62,12 @@ export default function MobileNav({ sessions }) {
                 </Link>
                 <Link
                   href="/en/"
-                  className="font-karla font-bold text-[#8BA0B2] group-hover:text-action"
+                  className="font-karla font-bold text-[#902020] group-hover:text-action"
                 >
                   home
                 </Link>
               </button>
+
               <button className="group flex gap-[1.5px] flex-col items-center ">
                 <div>
                   <Link href="/en/search/anime">
@@ -100,7 +89,7 @@ export default function MobileNav({ sessions }) {
                 </div>
                 <Link
                   href="/en/search/anime"
-                  className="font-karla font-bold text-[#8BA0B2] group-hover:text-action"
+                  className="font-karla font-bold text-[#902020] group-hover:text-action"
                 >
                   search
                 </Link>
@@ -110,7 +99,7 @@ export default function MobileNav({ sessions }) {
               <svg
                 width="20"
                 height="21"
-                className="fill-orange-500"
+                className="fill-[#902020]-500"
                 viewBox="0 0 20 21"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"

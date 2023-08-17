@@ -42,23 +42,23 @@ export function Navigasi() {
           <div className="flex items-center lg:gap-16 lg:pt-7">
             <Link
               href="/id/"
-              className=" font-outfit lg:text-[40px] text-[30px] font-bold text-[#FF7F57]"
+              className=" font-outfit lg:text-[40px] text-[30px] font-bold text-[#902020]"
             >
-              moopa
+              anime678
             </Link>
             <ul className="hidden items-center gap-10 pt-2 font-outfit text-[14px] lg:flex">
               <li>
                 <Link
                   href={`/id/search/anime?season=${season}&seasonYear=${year}`}
                 >
-                  This Season
+                  Current Season
                 </Link>
               </li>
               <li>
-                <Link href="/id/search/manga">Manga</Link>
+                <Link href="/id/search/anime">Anime</Link>
               </li>
               <li>
-                <Link href="/id/search/anime">Anime</Link>
+                <Link href="/id/search/manga">Manga</Link>
               </li>
 
               {status === "loading" ? (
@@ -218,7 +218,7 @@ export default function Home({ detail, populars, sessions }) {
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-[42px] w-[61.5px] text-[#8BA0B2] fill-orange-500"
+              className="h-[42px] w-[61.5px] text-[#902020] fill-[#902020]-500"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
@@ -256,7 +256,7 @@ export default function Home({ detail, populars, sessions }) {
                 </Link>
                 <Link
                   href="/id/"
-                  className="font-karla font-bold text-[#8BA0B2] group-hover:text-action"
+                  className="font-karla font-bold text-[#902020] group-hover:text-action"
                 >
                   home
                 </Link>
@@ -283,7 +283,7 @@ export default function Home({ detail, populars, sessions }) {
                 </div>
                 <Link
                   href="/id/search/anime"
-                  className="font-karla font-bold text-[#8BA0B2] group-hover:text-action"
+                  className="font-karla font-bold text-[#902020] group-hover:text-action"
                 >
                   search
                 </Link>
@@ -293,7 +293,7 @@ export default function Home({ detail, populars, sessions }) {
               <svg
                 width="20"
                 height="21"
-                className="fill-orange-500"
+                className="fill-[#902020]-500"
                 viewBox="0 0 20 21"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"

@@ -209,7 +209,7 @@ export default function Card() {
               </h1>
               <input
                 className="xl:w-[297px] md:w-[297px] lg:w-[230px] xl:h-[46px] h-[35px] xxs:w-[230px] xs:w-[280px] bg-secondary rounded-[10px] font-karla font-light text-[#ffffff89] text-center"
-                placeholder="search here..."
+                placeholder="search..."
                 type="text"
                 onKeyDown={handleKeyDown}
                 ref={inputRef}
@@ -409,7 +409,7 @@ export default function Card() {
                 {loading
                   ? ""
                   : !data?.length && (
-                      <div className="w-screen text-[#ff7f57] xl:col-start-3 col-start-2 items-center flex justify-center text-center font-bold font-karla xl:text-2xl">
+                      <div className="w-screen text-[#902020] xl:col-start-3 col-start-2 items-center flex justify-center text-center font-bold font-karla xl:text-2xl">
                         Oops!<br></br> Nothing's Found...
                       </div>
                     )}

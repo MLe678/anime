@@ -246,7 +246,7 @@ export default function Info({ info, color, api }) {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content={`Moopa - ${info.title.romaji || info.title.english}`}
+          content={`anime678 - ${info.title.romaji || info.title.english}`}
         />
         <meta
           name="twitter:description"
@@ -339,26 +339,6 @@ export default function Info({ info, color, api }) {
                       </span>
                     ))}
                 </div>
-                {info && (
-                  <div className="flex items-center gap-5 pt-3 text-center">
-                    <div className="flex items-center gap-2  text-center">
-                      <button
-                        type="button"
-                        className="bg-action px-10 rounded-sm font-karla font-bold"
-                        onClick={() => handleOpen()}
-                      >
-                        {!loading
-                          ? statuses
-                            ? statuses.name
-                            : "Add to List"
-                          : "Loading..."}
-                      </button>
-                      <div className="h-6 w-6">
-                        <HeartIcon />
-                      </div>
-                    </div>
-                  </div>
-                )}
               </div>
               <div className="bg-secondary rounded-sm xs:h-[30px]">
                 <div className="grid grid-cols-3 place-content-center xxs:flex  items-center justify-center h-full xxs:gap-10 p-2 text-sm">
@@ -390,34 +370,7 @@ export default function Info({ info, color, api }) {
 
             {/* PC */}
             <div className="hidden lg:flex gap-8 w-full flex-nowrap">
-              <div className="shrink-0 lg:h-[250px] lg:w-[180px] w-[115px] h-[164px] relative">
-                {info ? (
-                  <>
-                    <div className="bg-image lg:h-[250px] lg:w-[180px] w-[115px] h-[164px] bg-opacity-30 absolute backdrop-blur-lg z-10 -top-7" />
-                    <Image
-                      src={info.coverImage.extraLarge || info.coverImage.large}
-                      priority={true}
-                      alt="poster anime"
-                      height={700}
-                      width={700}
-                      className="object-cover lg:h-[250px] lg:w-[180px] w-[115px] h-[164px] z-20 absolute rounded-md -top-7"
-                    />
-                    <button
-                      type="button"
-                      className="bg-action flex-center z-20 h-[20px] w-[180px] absolute bottom-0 rounded-sm font-karla font-bold"
-                      onClick={() => handleOpen()}
-                    >
-                      {!loading
-                        ? statuses
-                          ? statuses.name
-                          : "Add to List"
-                        : "Loading..."}
-                    </button>
-                  </>
-                ) : (
-                  <Skeleton className="h-[250px] w-[180px]" />
-                )}
-              </div>
+              <div className="shrink-0 lg:h-[250px] lg:w-[180px] w-[115px] h-[164px] relative"></div>
 
               {/* PC */}
               <div className="hidden lg:flex w-full flex-col gap-5 h-[250px]">

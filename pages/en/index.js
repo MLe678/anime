@@ -13,7 +13,6 @@ import { getServerSession } from "next-auth/next";
 import { authOptions } from "../api/auth/[...nextauth]";
 import SearchBar from "../../components/searchBar";
 import Genres from "../../components/home/genres";
-import Schedule from "../../components/home/schedule";
 import getUpcomingAnime from "../../lib/anilist/getUpcomingAnime";
 import { useCountdown } from "../../utils/useCountdownSeconds";
 
@@ -270,28 +269,6 @@ export default function Home({ detail, populars, sessions, upComing }) {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, staggerChildren: 0.2 }} // Add staggerChildren prop
           >
-            {/* Schedule */}
-            {anime.length > 0 && (
-              <motion.div // Add motion.div to each child component
-                key="schedule"
-                initial={{ y: 20, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
-              >
-                <Schedule
-                  data={anime[0]}
-                  time={{
-                    days: days || 0,
-                    hours: hours || 0,
-                    minutes: minutes || 0,
-                    seconds: seconds || 0,
-                  }}
-                  scheduleData={schedules}
-                />
-              </motion.div>
-            )}
-
             {/* SECTION 3 */}
             {detail && (
               <motion.div // Add motion.div to each child component

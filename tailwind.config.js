@@ -48,7 +48,7 @@ module.exports = {
       colors: {
         primary: "#141519",
         secondary: "#232329",
-        action: "#FF7F57",
+        action: "#902020",
         image: "#3B3C41",
         txt: "#dbdcdd",
         tersier: "#0c0d10",

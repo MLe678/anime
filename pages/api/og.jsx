@@ -64,7 +64,7 @@ export default async function handler(request) {
               top: 10,
               left: 25,
               fontSize: "40",
-              color: "#FF7F57",
+              color: "#902020",
               fontFamily: "Outfit",
               filter: "brightness(100%)",
             }}

@@ -26,17 +26,6 @@ export default function DesktopDetails({
                 width={700}
                 className="object-cover lg:h-[250px] lg:w-[180px] w-[115px] h-[164px] z-20 absolute rounded-md -top-7"
               />
-              <button
-                type="button"
-                className="bg-action flex-center z-20 h-[20px] w-[180px] absolute bottom-0 rounded-sm font-karla font-bold"
-                onClick={() => handleOpen()}
-              >
-                {!loading
-                  ? statuses
-                    ? statuses.name
-                    : "Add to List"
-                  : "Loading..."}
-              </button>
             </>
           ) : (
             <Skeleton className="h-[250px] w-[180px]" />
@@ -45,7 +34,10 @@ export default function DesktopDetails({
 
         <div className="hidden lg:flex w-full flex-col gap-5 h-[250px]">
           <div className="flex flex-col gap-2">
-            <h1 className=" font-inter font-bold text-[36px] text-white line-clamp-1">
+            <h1
+              className="title font-inter font-bold text-[36px] text-white line-clamp-1"
+              title={info?.title?.romaji || info?.title?.english}
+            >
               {info ? (
                 info?.title?.romaji || info?.title?.english
               ) : (

@@ -41,8 +41,8 @@ function Navbar(props) {
   return (
     <header className={`${props.className}`}>
       <div className="flex h-16 w-auto items-center justify-between px-5 lg:mx-auto lg:w-[80%] lg:px-0 text-[#dbdcdd]">
-        <div className="pb-2 font-outfit text-4xl font-semibold lg:block text-white">
-          <Link href={`/${lang}/`}>anime</Link>
+        <div className="pb-2 font-outfit text-4xl font-semibold lg:block text-[#902020]">
+          <Link href={`/${lang}/`}>anime678</Link>
         </div>
 
         {/* Mobile Hamburger */}
@@ -54,7 +54,7 @@ function Navbar(props) {
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-[42px] w-[61.5px] text-[#8BA0B2] fill-orange-500"
+              className="h-[42px] w-[61.5px] text-[#8BA0B2] fill-[#902020]-500"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
@@ -114,7 +114,6 @@ function Navbar(props) {
                     home
                   </Link>
                 </button>
-
                 <button className="group flex gap-[1.5px] flex-col items-center ">
                   <div>
                     <Link href={`/${lang}/search/anime`}>
@@ -146,7 +145,7 @@ function Navbar(props) {
                 <svg
                   width="20"
                   height="21"
-                  className="fill-orange-500"
+                  className="fill-[#902020]-500"
                   viewBox="0 0 20 21"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -178,7 +177,7 @@ function Navbar(props) {
             <li>
               <Link
                 href={`/${lang}/`}
-                className="p-2 transition-all duration-100 hover:text-orange-600"
+                className="p-2 transition-all duration-100 hover:text-[#902020]-600"
               >
                 home
               </Link>
@@ -186,45 +185,12 @@ function Navbar(props) {
             <li>
               <Link
                 href={`/${lang}/search/anime`}
-                className="p-2 transition-all duration-100 hover:text-orange-600"
+                className="p-2 transition-all duration-100 hover:text-[#902020]-600"
               >
                 search
               </Link>
             </li>
-            {status === "loading" ? (
-              <li>Loading...</li>
-            ) : (
-              <>
-                {session && (
-                  <li className="flex items-center justify-center group ">
-                    <button>
-                      <Image
-                        src={session?.user.image.large}
-                        alt="imagine"
-                        width={500}
-                        height={500}
-                        className="object-cover h-10 w-10 rounded-full"
-                      />
-                    </button>
-                    <div className="absolute z-50 w-28 text-center -bottom-20 text-white shadow-2xl opacity-0 bg-secondary p-1 py-2 rounded-md font-karla font-light invisible group-hover:visible group-hover:opacity-100 duration-300 transition-all grid place-items-center gap-1">
-                      <Link
-                        href={`/${lang}/profile/${session?.user.name}`}
-                        className="hover:text-action"
-                      >
-                        Profile
-                      </Link>
-                      <button
-                        onClick={() => signOut({ callbackUrl: "/" })}
-                        className="hover:text-action"
-                      >
-                        Log out
-                      </button>
-                    </div>
-                    {/* My List */}
-                  </li>
-                )}
-              </>
-            )}
+            {status === "loading" ? <li>Loading...</li> : <></>}
           </ul>
         </nav>
       </div>

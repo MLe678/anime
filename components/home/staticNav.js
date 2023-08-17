@@ -48,38 +48,26 @@ export default function Navigasi() {
           <div className="flex items-center lg:gap-16 lg:pt-7">
             <Link
               href="/en/"
-              className=" font-outfit lg:text-[40px] text-[30px] font-bold text-[#FF7F57]"
+              className=" font-outfit lg:text-[40px] text-[30px] font-bold text-[#902020]"
             >
-              anime
+              anime678
             </Link>
             <ul className="hidden items-center gap-10 pt-2 font-outfit text-[14px] lg:flex">
               <li>
                 <Link
                   href={`/en/search/anime?season=${season}&seasonYear=${year}`}
                 >
-                  This Season
+                  Current Season
                 </Link>
-              </li>
-              <li>
-                <Link href="/en/search/manga">Manga</Link>
               </li>
               <li>
                 <Link href="/en/search/anime">Anime</Link>
               </li>
+              <li>
+                <Link href="/en/search/manga">Manga</Link>
+              </li>
 
-              {status === "loading" ? (
-                <li>Loading...</li>
-              ) : (
-                <>
-                  {sessions && (
-                    <li className="text-center">
-                      <Link href={`/en/profile/${sessions?.user.name}`}>
-                        My List
-                      </Link>
-                    </li>
-                  )}
-                </>
-              )}
+              {status === "loading" ? <li>Loading...</li> : <></>}
             </ul>
           </div>
           <div className="relative flex lg:scale-75 scale-[65%] items-center mb-7 lg:mb-1">
@@ -87,7 +75,7 @@ export default function Navigasi() {
               <input
                 className="search-text"
                 type="text"
-                placeholder="Search Anime"
+                placeholder="search..."
                 onKeyDown={handleKeyDown}
               />
               <div className="search-btn">

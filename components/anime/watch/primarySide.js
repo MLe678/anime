@@ -23,10 +23,10 @@ export default function PrimarySide({
   status,
   onList,
   proxy,
-  disqus,
   setOnList,
   episodeList,
   timeWatched,
+  dub,
 }) {
   const [episodeData, setEpisodeData] = useState();
   const [open, setOpen] = useState(false);
@@ -91,7 +91,7 @@ export default function PrimarySide({
 
     mediaSession.metadata = new MediaMetadata({
       title: title,
-      artist: `Anime ${
+      artist: `anime678 ${
         title === info?.title?.romaji
           ? "- Episode " + epiNumber
           : `- ${info?.title?.romaji || info?.title?.english}`
@@ -148,6 +148,7 @@ export default function PrimarySide({
                 aniTitle={info.title?.romaji || info.title?.english}
                 track={navigation}
                 timeWatched={timeWatched}
+                dub={dub}
               />
             )
           ) : (
@@ -162,13 +163,14 @@ export default function PrimarySide({
                   <Link
                     href={`/en/anime/${info.id}`}
                     className="hover:underline"
+                    title={navigation?.playing?.title || info.title?.romaji}
                   >
                     {navigation?.playing?.title || info.title?.romaji}
                   </Link>
                 </h1>
-                <h1 className="text-sm font-karla font-light">
+                <h3 className="text-sm font-karla font-light">
                   Episode {epiNumber}
-                </h1>
+                </h3>
               </div>
               <div className="flex gap-4 items-center justify-end">
                 <div className="relative">
@@ -180,7 +182,11 @@ export default function PrimarySide({
                         (episode) => episode.number === parseInt(e.target.value)
                       );
                       router.push(
-                        `/en/anime/watch/${info.id}/${providerId}?id=${selectedEpisode.id}&num=${selectedEpisode.number}`
+                        `/en/anime/watch/${info.id}/${providerId}?id=${
+                          selectedEpisode.id
+                        }&num=${selectedEpisode.number}${
+                          dub ? `&dub=${dub}` : ""
+                        }`
                       );
                     }}
                   >
@@ -199,7 +205,11 @@ export default function PrimarySide({
                   }relative group`}
                   onClick={() => {
                     router.push(
-                      `/en/anime/watch/${info.id}/${providerId}?id=${navigation?.next.id}&num=${navigation?.next.number}`
+                      `/en/anime/watch/${info.id}/${providerId}?id=${
+                        navigation?.next.id
+                      }&num=${navigation?.next.number}${
+                        dub ? `&dub=${dub}` : ""
+                      }`
                     );
                   }}
                 >
@@ -229,12 +239,12 @@ export default function PrimarySide({
           <Details
             info={info}
             session={session}
+            description={navigation?.playing?.description || info?.description}
             epiNumber={epiNumber}
             id={watchId}
             onList={onList}
             setOnList={setOnList}
             handleOpen={handleOpen}
-            disqus={disqus}
           />
         </div>
       </div>

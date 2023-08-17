@@ -29,26 +29,6 @@ export default function DetailTop({ info, statuses, handleOpen, loading }) {
               </span>
             ))}
         </div>
-        {info && (
-          <div className="flex items-center gap-5 pt-3 text-center">
-            <div className="flex items-center gap-2  text-center">
-              <button
-                type="button"
-                className="bg-action px-10 rounded-sm font-karla font-bold"
-                onClick={() => handleOpen()}
-              >
-                {!loading
-                  ? statuses
-                    ? statuses.name
-                    : "Add to List"
-                  : "Loading..."}
-              </button>
-              <div className="h-6 w-6">
-                <HeartIcon />
-              </div>
-            </div>
-          </div>
-        )}
       </div>
       <div className="bg-secondary rounded-sm xs:h-[30px]">
         <div className="grid grid-cols-3 place-content-center xxs:flex  items-center justify-center h-full xxs:gap-10 p-2 text-sm">

@@ -21,7 +21,6 @@ export default function Info({
   dub,
   userData,
   proxy,
-  disqus,
 }) {
   const [info, setInfo] = useState(null);
   const [currentEpisode, setCurrentEpisode] = useState(null);
@@ -194,7 +193,6 @@ export default function Info({
             status={statuses}
             onList={onList}
             proxy={proxy}
-            disqus={disqus}
             setOnList={setOnList}
             setLoading={setLoading}
             loading={loading}
@@ -267,7 +265,6 @@ export async function getServerSideProps(context) {
       dub: dub || null,
       userData: userData?.[0] || null,
       proxy,
-      disqus,
     },
   };
 }
