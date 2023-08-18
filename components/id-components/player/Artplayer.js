@@ -10,12 +10,9 @@ export default function Player({ option, res, getInstance, ...rest }) {
       container: artRef.current,
       fullscreen: true,
       hotkey: true,
-      lock: true,
       setting: true,
-      playbackRate: true,
       autoOrientation: true,
-      pip: true,
-      theme: "#f97316",
+      theme: "#902020",
       controls: [
         {
           name: "fast-rewind",

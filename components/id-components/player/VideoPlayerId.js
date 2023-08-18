@@ -9,8 +9,6 @@ export default function VideoPlayerId({
   session,
   aniId,
   stats,
-  op,
-  ed,
   title,
   poster,
 }) {
@@ -99,7 +97,6 @@ export default function VideoPlayerId({
 
               mediaSession.setPositionState({
                 duration: art.duration,
-                playbackRate: art.playbackRate,
                 position: art.currentTime,
               });
 
@@ -118,60 +115,6 @@ export default function VideoPlayerId({
                 time: art.currentTime,
                 duration: art.duration,
               });
-
-              if (
-                op &&
-                currentTime >= op.interval.startTime &&
-                currentTime <= op.interval.endTime
-              ) {
-                // Add the layer if it's not already added
-                if (!art.controls["op"]) {
-                  // Remove the other control if it's already added
-                  if (art.controls["ed"]) {
-                    art.controls.remove("ed");
-                  }
-
-                  // Add the control
-                  art.controls.add({
-                    name: "op",
-                    position: "top",
-                    html: '<button class="skip-button">Skip Opening</button>',
-                    click: function (...args) {
-                      art.seek = op.interval.endTime;
-                    },
-                  });
-                }
-              } else if (
-                ed &&
-                currentTime >= ed.interval.startTime &&
-                currentTime <= ed.interval.endTime
-              ) {
-                // Add the layer if it's not already added
-                if (!art.controls["ed"]) {
-                  // Remove the other control if it's already added
-                  if (art.controls["op"]) {
-                    art.controls.remove("op");
-                  }
-
-                  // Add the control
-                  art.controls.add({
-                    name: "ed",
-                    position: "top",
-                    html: '<button class="skip-button">Skip Ending</button>',
-                    click: function (...args) {
-                      art.seek = ed.interval.endTime;
-                    },
-                  });
-                }
-              } else {
-                // Remove the controls if they're added
-                if (art.controls["op"]) {
-                  art.controls.remove("op");
-                }
-                if (art.controls["ed"]) {
-                  art.controls.remove("ed");
-                }
-              }
             });
           }}
         />

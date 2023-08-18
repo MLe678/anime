@@ -74,7 +74,7 @@ export default function Home({ detail, populars, sessions, upComing }) {
       if (ad) {
         toast.dark("Ad Block enabled", {
           position: "top-center",
-          autoClose: false,
+          autoClose: true,
           hideProgressBar: true,
           closeOnClick: true,
           pauseOnHover: true,

@@ -227,7 +227,8 @@ export default function VideoPlayer({
                     watchId: id,
                     title: track?.playing?.title || aniTitle,
                     aniTitle: aniTitle,
-                    image: track?.playing?.image || info?.coverImage?.extraLarge,
+                    image:
+                      track?.playing?.image || info?.coverImage?.extraLarge,
                     number: Number(progress),
                     duration: art.duration,
                     timeWatched: art.currentTime,
@@ -347,60 +348,6 @@ export default function VideoPlayer({
             art.on("video:timeupdate", () => {
               var currentTime = art.currentTime;
               // console.log(art.currentTime);
-
-              if (
-                skip?.op &&
-                currentTime >= skip.op.interval.startTime &&
-                currentTime <= skip.op.interval.endTime
-              ) {
-                // Add the layer if it's not already added
-                if (!art.controls["op"]) {
-                  // Remove the other control if it's already added
-                  if (art.controls["ed"]) {
-                    art.controls.remove("ed");
-                  }
-
-                  // Add the control
-                  art.controls.add({
-                    name: "op",
-                    position: "top",
-                    html: '<button class="skip-button">Skip Opening</button>',
-                    click: function (...args) {
-                      art.seek = skip.op.interval.endTime;
-                    },
-                  });
-                }
-              } else if (
-                skip?.ed &&
-                currentTime >= skip.ed.interval.startTime &&
-                currentTime <= skip.ed.interval.endTime
-              ) {
-                // Add the layer if it's not already added
-                if (!art.controls["ed"]) {
-                  // Remove the other control if it's already added
-                  if (art.controls["op"]) {
-                    art.controls.remove("op");
-                  }
-
-                  // Add the control
-                  art.controls.add({
-                    name: "ed",
-                    position: "top",
-                    html: '<button class="skip-button">Skip Ending</button>',
-                    click: function (...args) {
-                      art.seek = skip.ed.interval.endTime;
-                    },
-                  });
-                }
-              } else {
-                // Remove the controls if they're added
-                if (art.controls["op"]) {
-                  art.controls.remove("op");
-                }
-                if (art.controls["ed"]) {
-                  art.controls.remove("ed");
-                }
-              }
             });
           }}
         />
