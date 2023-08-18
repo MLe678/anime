@@ -197,7 +197,7 @@ export default function Home({ detail, populars, sessions }) {
         <title>anime678</title>
         <meta charSet="UTF-8"></meta>
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Anime and Manga Streaming" />
+        <meta name="twitter:title" content="anime678" />
         <meta name="twitter:description" content="Anime and Manga" />
         <meta name="twitter:image" content="/icon-512x512.png" />
         <link rel="icon" href="/c.svg" />
