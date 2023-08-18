@@ -54,14 +54,6 @@ export default function TopSection({ info, firstEp, setCookie }) {
               <BookOpenIcon className="w-5 h-5" />
             </Link>
           </button>
-          <Link
-            href={`https://anilist.co/manga/${info.id}`}
-            className="flex-center rounded-md bg-tersier shadow-md shadow-[#0E0E0F] h-[35px] lg:h-[40px] lg:px-4 px-2"
-          >
-            <div className="flex-center w-5 h-5">
-              <AniList />
-            </div>
-          </Link>
         </div>
       </div>
       <div className="w-full flex flex-col justify-start z-40">
