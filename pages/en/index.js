@@ -233,7 +233,7 @@ export default function Home({ detail, populars, sessions, upComing }) {
   return (
     <>
       <Head>
-        <title>Anime</title>
+        <title>anime678</title>
         <meta charSet="UTF-8"></meta>
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Free Anime and Manga Streaming" />

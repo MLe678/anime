@@ -1,5 +1,6 @@
 import dotenv from "dotenv";
 import ChapterSelector from "../../../components/manga/chapters";
+import HamburgerMenu from "../../../components/manga/mobile/hamburgerMenu";
 import Navbar from "../../../components/navbar";
 import TopSection from "../../../components/manga/info/topSection";
 import Head from "next/head";
@@ -31,7 +32,7 @@ export default function Manga({ info, userManga, chapters }) {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content={`anime - ${info.title.romaji || info.title.english}`}
+          content={`Moopa - ${info.title.romaji || info.title.english}`}
         />
         <meta
           name="twitter:description"
@@ -45,6 +46,7 @@ export default function Manga({ info, userManga, chapters }) {
         />
       </Head>
       <div className="min-h-screen w-screen flex flex-col items-center relative">
+        <HamburgerMenu />
         <Navbar className="absolute top-0 w-full z-40" />
         <div className="flex flex-col w-screen items-center gap-5 md:gap-10 py-10 pt-nav">
           <div className="flex-center w-full relative z-30">
