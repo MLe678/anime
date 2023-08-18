@@ -13,7 +13,6 @@ export default function Details({
   setOnList,
   handleOpen,
 }) {
-  const [showComments, setShowComments] = useState(false);
   const { markPlanning } = useAniList(session);
   const [url, setUrl] = useState(null);
 
@@ -26,7 +25,6 @@ export default function Details({
 
   useEffect(() => {
     const url = window.location.href;
-    setShowComments(false);
     setUrl(url);
   }, [id]);
 
@@ -57,29 +55,6 @@ export default function Details({
             </h2>
             <div className="row-start-2">
               {info ? info.studios.edges[0].node.name : <Skeleton width={80} />}
-            </div>
-            <div className="hidden xxs:grid col-start-2 place-content-end relative">
-              <div>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  onClick={() => {
-                    session ? handlePlan() : handleOpen();
-                  }}
-                  className={`w-8 h-8 hover:fill-white text-white hover:cursor-pointer ${
-                    onList ? "fill-white" : ""
-                  }`}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z"
-                  />
-                </svg>
-              </div>
             </div>
           </div>
           <div className="grid gap-1 items-center">
