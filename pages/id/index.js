@@ -194,15 +194,12 @@ export default function Home({ detail, populars, sessions }) {
   return (
     <>
       <Head>
-        <title>Anime</title>
+        <title>anime678</title>
         <meta charSet="UTF-8"></meta>
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Anime and Manga Streaming" />
         <meta name="twitter:description" content="Anime and Manga" />
-        <meta
-          name="twitter:image"
-          content="https://cdn.discordapp.com/attachments/1084446049986420786/1093300833422168094/image.png"
-        />
+        <meta name="twitter:image" content="/icon-512x512.png" />
         <link rel="icon" href="/c.svg" />
       </Head>
 
