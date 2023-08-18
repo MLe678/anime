@@ -12,6 +12,7 @@ export default function Player({ option, res, getInstance, ...rest }) {
       hotkey: true,
       setting: true,
       autoOrientation: true,
+      pip: true,
       theme: "#902020",
       controls: [
         {
