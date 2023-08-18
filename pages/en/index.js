@@ -241,10 +241,7 @@ export default function Home({ detail, populars, sessions, upComing }) {
           name="twitter:description"
           content="Free Anime and Manga Streaming"
         />
-        <meta
-          name="twitter:image"
-          content="https://cdn.discordapp.com/attachments/1084446049986420786/1093300833422168094/image.png"
-        />
+        <meta name="twitter:image" content="/icon-512x512.png" />
         <link rel="icon" href="/c.svg" />
       </Head>
 
