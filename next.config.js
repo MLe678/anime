@@ -60,7 +60,7 @@ module.exports = withPWA({
   //               "data:",
   //               "https://media.kitsu.io",
   //               "https://artworks.thetvdb.com",
-  //               "https://img.moopa.live",
+  //               "/icon-512x512.png",
   //             ],
   //             baseUri: "self",
   //             formAction: "self",
