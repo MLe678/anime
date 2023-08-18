@@ -37,7 +37,7 @@ const sorts = [
   { name: "Title", value: "TITLE_ROMAJI" },
   { name: "Popularity", value: "POPULARITY_DESC" },
   { name: "Trending", value: "TRENDING_DESC" },
-  { name: "Favourites", value: "FAVOURITES_DESC" },
+  { name: "Favorites", value: "FAVORITES_DESC" },
   { name: "Average Score", value: "SCORE_DESC" },
   { name: "Date Added", value: "ID_DESC" },
   { name: "Release Date", value: "START_DATE_DESC" },
