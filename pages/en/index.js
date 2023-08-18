@@ -72,7 +72,7 @@ export default function Home({ detail, populars, sessions, upComing }) {
     async function adBlock() {
       const ad = await checkAdBlock();
       if (ad) {
-        toast.dark("Ad Block check. There are no ads on the site.", {
+        toast.dark("Ad Block enabled", {
           position: "top-center",
           autoClose: false,
           hideProgressBar: true,
