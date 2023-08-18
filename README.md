@@ -3,7 +3,7 @@
 1. Clone this repository using :
 
 ```bash
-git clone https://github.com/DevanAbinaya/Ani-Moopa.git
+git clone this repo
 ```
 
 2. Install package using npm :
