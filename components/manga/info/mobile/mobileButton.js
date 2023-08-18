@@ -26,6 +26,14 @@ export default function MobileButton({ info, firstEp, saveManga }) {
           <BookOpenIcon className="w-4 h-4" />
         </Link>
       </button>
+      <Link
+        href={`https://anilist.co/manga/${info.id}`}
+        className="flex-center rounded bg-secondary shadow-md shadow-secondary h-[30px] lg:px-4 px-2"
+      >
+        <div className="flex-center w-5 h-5">
+          <AniList />
+        </div>
+      </Link>
     </div>
   );
 }
